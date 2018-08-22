@@ -26,12 +26,10 @@ public class Funcionario {
         this.email = email;
     }
 
-   
 
    public float getSalarioBase() {
-        return salarioBase - (salarioBase * 0.20f);//Commit com o problema resolvido
+        return salarioBase;// - (salarioBase * 0.20f);//Commit com o problema resolvido
    }
-   
 
     public void setSalarioBase(float salarioBase) {
         this.salarioBase = salarioBase;
