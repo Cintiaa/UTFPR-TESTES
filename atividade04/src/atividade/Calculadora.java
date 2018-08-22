@@ -15,7 +15,6 @@ public class Calculadora {
                 return f.getSalarioBase() - (f.getSalarioBase() * 0.20f);
             }
             return f.getSalarioBase() - (f.getSalarioBase() * 0.10f);
-
         }
 
         if (f.getCargo().equals("Testador")) {
@@ -23,7 +22,13 @@ public class Calculadora {
                 return f.getSalarioBase() - (f.getSalarioBase() * 0.25f);
             }
             return f.getSalarioBase() - (f.getSalarioBase() * 0.15f);
-
+        }
+        
+        if (f.getCargo().equals("Gerente")) {
+            if (f.getSalarioBase() >= 5000f) {
+                return f.getSalarioBase() - (f.getSalarioBase() * 0.30f);
+            }
+            return f.getSalarioBase() - (f.getSalarioBase() * 0.20f);
         }
         return -1;
     }
