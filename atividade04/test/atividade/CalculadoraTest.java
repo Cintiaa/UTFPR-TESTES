@@ -3,6 +3,7 @@ package atividade;
 import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  *
@@ -48,4 +49,13 @@ public class CalculadoraTest {
         assertEquals(1530.0f, calc.calcularDesconto(f), 0.01);
     }
 
+    
+    @Test
+    public void testaDescontoGerente() {
+        Calculadora calc = new Calculadora();
+        Funcionario f = new Funcionario();
+        f.setCargo("Gerente");
+        f.setSalarioBase(8000.0f);
+        assertEquals(5600.0f, calc.calcularDesconto(f), 0.01);
+    }
 }
