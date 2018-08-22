@@ -16,21 +16,23 @@ public class CalculadoraTest {
 
     /**
      * “O participante deve implementar uma calculadora de salário de
-     * funcionários. Caso o cargo seja DESENVOLVEDOR, o funcionário terá
+     * funcionários. 
+     * Caso o cargo seja DESENVOLVEDOR, o funcionário terá
      * desconto de 20% caso o salário seja maior ou igual que 3.000,00, ou
-     * apenas 10% caso o salário seja menor que isso. Caso o cargo seja DBA, o
-     * funcionário terá desconto de 25% caso o salário seja maior ou igual que
-     * 2.000, 00, ou apenas 15% caso o salário seja menor que isso. Caso o cargo
-     * seja TESTADOR, o funcionário terá desconto de 25% caso o salário seja
-     * maior ou igual que 2.000,00, ou apenas 15% caso o salário seja menor que
-     * isso. Caso o cargo seja GERENTE, o funcionário terá desconto de 30% caso
-     * o salário seja maior ou igual que 5.000,00, ou apenas 20% caso o salário
-     * seja menor que isso. Exemplos de cálculo do salário: DESENVOLVEDOR com
-     * salário-base 5,000.00. Salário final = 4.000,00 GERENTE com salário-base
-     * de 2.500,00. Salário final: 2.000,00 TESTADOR com salário de 550.00.
-     * Salário final: 467,50” (Aniche, 2012).
-     *
+     * apenas 10% caso o salário seja menor que isso. 
+     * Caso o cargo seja DBA, o funcionário terá desconto de 25% caso o salário seja maior ou igual que
+     * 2.000, 00, ou apenas 15% caso o salário seja menor que isso. 
+     * Caso o cargo seja TESTADOR, o funcionário terá desconto de 25% caso o salário seja
+     * maior ou igual que 2.000,00, ou apenas 15% caso o salário seja menor que isso. 
+     * Caso o cargo seja GERENTE, o funcionário terá desconto de 30% caso o salário seja maior ou igual 
+     * que 5.000,00, ou apenas 20% caso o salário seja menor que isso. 
+     * 
+     * Exemplos de cálculo do salário: DESENVOLVEDOR com
+     * salário-base 5,000.00. Salário final = 4.000,00 
+     * GERENTE com salário-base de 2.500,00. Salário final: 2.000,00 
+     * TESTADOR com salário de 550.00. Salário final: 467,50” (Aniche, 2012).
      */
+    
     @Test
     public void testaDescontoDesenvolvedor() {
         Calculadora calc = new Calculadora();
@@ -45,8 +47,8 @@ public class CalculadoraTest {
         Calculadora calc = new Calculadora();
         Funcionario f = new Funcionario();
         f.setCargo("Testador");
-        f.setSalarioBase(1800.0f);
-        assertEquals(1530.0f, calc.calcularDesconto(f), 0.01);
+        f.setSalarioBase(550.0f);
+        assertEquals(467.50f, calc.calcularDesconto(f), 0.01);
     }
 
     
@@ -55,7 +57,16 @@ public class CalculadoraTest {
         Calculadora calc = new Calculadora();
         Funcionario f = new Funcionario();
         f.setCargo("Gerente");
-        f.setSalarioBase(8000.0f);
-        assertEquals(5600.0f, calc.calcularDesconto(f), 0.01);
+        f.setSalarioBase(2500.0f);
+        assertEquals(2000.0f, calc.calcularDesconto(f), 0.01);
+    }
+    
+     @Test
+    public void testaDescontoDBA() {
+        Calculadora calc = new Calculadora();
+        Funcionario f = new Funcionario();
+        f.setCargo("DBA");
+        f.setSalarioBase(3000.0f);
+        assertEquals(2250.0f, calc.calcularDesconto(f), 0.01);
     }
 }
