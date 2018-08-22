@@ -29,7 +29,7 @@ public class Funcionario {
    
 
    public float getSalarioBase() {
-        return salarioBase;
+        return salarioBase - (salarioBase * 0.20f);//Commit com o problema resolvido
    }
    
 
