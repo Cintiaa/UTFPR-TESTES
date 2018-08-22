@@ -9,31 +9,18 @@ import java.util.List;
  */
 public class Calculadora {
 
-    public List<Funcionario> calcularSalario(String cargo, float salario, float desconto) {
-            
-        ArrayList<Funcionario> funcionario = new ArrayList<>();
+    public List<Funcionario> calcularDesconto(String cargo, float salarioLiquido) {
+        ArrayList<Funcionario> func = new ArrayList<>();
+        Funcionario p = new Funcionario();
+        func.add(p);
         
-        if (cargo.equals("")) {
-            if (salario >= 3000) {
-                salario -= desconto;
-            } else {
-                salario -= desconto;
-            }
+        
+        if(cargo.equals(p.getCargo()) && p.getSalarioBase() >= 3000.0f){
+           
+            salarioLiquido = p.getSalarioBase() - (p.getSalarioBase() * 0.20f);
         }
-        if (cargo.equals("")) {
-            if (salario >= 2000) {
-                salario -= desconto;
-            } else {
-                salario -= desconto;
-            }
-        }
-        if (cargo.equals("")) {
-            if (salario >= 5000) {
-                salario -= desconto;
-            } else {
-                salario -= desconto;
-            }
-        }
-        return funcionario;
+        
+      
+        return func;
     }
 }

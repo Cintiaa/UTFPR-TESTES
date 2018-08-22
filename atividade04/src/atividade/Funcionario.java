@@ -5,7 +5,7 @@ package atividade;
  * @author CINTIA
  */
 public class Funcionario {
-    private String nome;
+   private String nome;
     private String email;
     private float salarioBase;
     private String cargo;
@@ -26,9 +26,12 @@ public class Funcionario {
         this.email = email;
     }
 
-    public double getSalarioBase() {
+   
+
+   public float getSalarioBase() {
         return salarioBase;
-    }
+   }
+   
 
     public void setSalarioBase(float salarioBase) {
         this.salarioBase = salarioBase;
@@ -41,4 +44,5 @@ public class Funcionario {
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
+    
 }
