@@ -66,5 +66,21 @@ public class Utilitario {
         }
         return new Estatistica(media, menor, maior, contMenor, contMaior);
     }
+    
+    public double DesvioPadrao(double[] v){
+        double somatorio = 0;
+        double aux = 0;
+        double media = 0;
+        for(int i = 0; i < v.length; i++){
+            media += v[i];
+        }
+        media /= v.length;
+        for(int i = 0; i < v.length; i++){
+            aux = v[i] - media;
+            somatorio = somatorio + (aux * aux);
+        }
+        //System.out.println(e.getMedia());
+        return Math.sqrt(((double) 1 / (v.length - 1) * somatorio));
+    }
 
 }

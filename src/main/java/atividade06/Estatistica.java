@@ -11,6 +11,11 @@ public class Estatistica {
     private double maior;
     private int contMenor;
     private int contMaior;
+    private double desvioPadrao;
+    
+    public Estatistica(){
+        
+    }
     
     public Estatistica(double tMedia, double tMenor, double tMaior, int tCMenor, int tCMaior){
         this.media = tMedia;
@@ -67,6 +72,14 @@ public class Estatistica {
 
     public void setContMenor(int contMenor) {
         this.contMenor = contMenor;
+    }
+
+    public double getDesvioPadrao() {
+        return desvioPadrao;
+    }
+
+    public void setDesvioPadrao(double desvioPadrao) {
+        this.desvioPadrao = desvioPadrao;
     }
     
 }

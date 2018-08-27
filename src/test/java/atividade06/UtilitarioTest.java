@@ -53,8 +53,7 @@ public class UtilitarioTest {
     public void testaDesvioPadrao() {
         double[] v = {1, 4, 6, 3, 7};
         Utilitario u = new Utilitario();
-        double resp = u.DesvioPadrao(v);
-        assertEquals(2.38747, resp.getDesvioPadrao(), 0.01);
+        assertEquals(2.38747, u.DesvioPadrao(v), 0.01);
         
         
     }
