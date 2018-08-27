@@ -12,7 +12,7 @@ public class Utilitario {
         Arrays.sort(v);
     }
 
-    public double VerificaEstatistica(double[] v) throws Exception {
+    public void VerificaVetor(double[] v) throws Exception {
 
         if (v == null) {
             throw new Exception("vetor nao pode ser nulo");
@@ -21,7 +21,9 @@ public class Utilitario {
         if (v.length == 0) {
             throw new Exception("vetor com zero elementos");
         }
-        
+    }
+
+    public double Mediana(double[] v) {
         this.OrdernaVetor(v);
         int tipo = v.length % 2;
         if (tipo == 1) {
@@ -30,9 +32,35 @@ public class Utilitario {
             int i = v.length / 2;
             return (v[i - 1] + v[i] / 2);
         }
-
     }
-    
-     
+
+    public Estatistica Media(double[] v) {
+        double media = 0;
+        double menor = v[0];
+        double maior = v[0];
+        int contMaior = 0;
+        int contMenor = 0;
+        
+
+        for (int i = 0; i < v.length; i++) {
+            media += v[i];
+            if (v[i] < menor) {
+                menor = v[i];
+            }
+            if (v[i] > maior) {
+                maior = v[i];
+            }
+        }
+        media = media / v.length;
+
+        for (int i = 0; i < v.length; i++) {
+            if (v[i] < media) {
+                contMenor += 1;
+            }if (v[i] > media) {
+                contMaior += 1;
+            }
+        }
+        return new Estatistica(media, menor, maior, contMenor, contMaior);
+    }
 
 }

@@ -20,10 +20,10 @@ public class UtilitarioTest {
     
     /** (i) Encontre a mediana dos números.**/
     @Test
-    public void testaVetorOrdenadoImpar() throws Exception {
+    public void testaVetorOrdenadoImpar() {
         double v[] = {1, 2, 3, 4, 5};
         Utilitario m = new Utilitario();
-        double res = m.VerificaEstatistica(v);
+        double res = m.Mediana(v);
         assertEquals(3.0, res, 0.01);
     }
 
@@ -33,15 +33,16 @@ public class UtilitarioTest {
      */
     
     @Test
-    public void testaVetor() throws Exception {
+    public void testaVetor() {
         double v[] = {3, 5, 8, 9, 5, 1, 4};
         Utilitario m = new Utilitario();
-        double res = m.VerificaEstatistica(v);
-        assertEquals(5, res, 0.01);
-        assertEquals(1, res, 0.01);
-        assertEquals(9, res, 0.01);
-        assertEquals(3, res, 0.01);
-        assertEquals(2, res, 0.01);   
+        Estatistica res = m.Media(v);
+        assertEquals(5, res.getMedia(), 0.01);
+        assertEquals(1, res.getMenor(), 0.01);
+        assertEquals(9, res.getMaior(), 0.01);
+        assertEquals(3, res.getContMenor()); 
+        assertEquals(2, res.getContMaior());
+          
     }
     
     /**
