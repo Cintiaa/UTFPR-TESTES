@@ -20,7 +20,7 @@ public class UtilitarioTest {
     
     /** (i) Encontre a mediana dos números.**/
     @Test
-    public void testaVetorOrdenadoImpar() {
+    public void testaVetorOrdenadoImpar() throws Exception {
         double v[] = {1, 2, 3, 4, 5};
         Utilitario m = new Utilitario();
         double res = m.VerificaEstatistica(v);
@@ -31,6 +31,18 @@ public class UtilitarioTest {
      * (ii) Encontre a média, o menor valor, o maior valor, o número de valores
      * acima da média e o o número de valores abaixo da média.*
      */
+    
+    @Test
+    public void testaVetor() throws Exception {
+        double v[] = {3, 5, 8, 9, 5, 1, 4};
+        Utilitario m = new Utilitario();
+        double res = m.VerificaEstatistica(v);
+        assertEquals(5, res, 0.01);
+        assertEquals(1, res, 0.01);
+        assertEquals(9, res, 0.01);
+        assertEquals(3, res, 0.01);
+        assertEquals(2, res, 0.01);   
+    }
     
     /**
      * (iii) Encontre o desvio padrão dos números.*

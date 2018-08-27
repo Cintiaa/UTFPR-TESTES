@@ -12,8 +12,16 @@ public class Utilitario {
         Arrays.sort(v);
     }
 
-    public double VerificaEstatistica(double[] v) {
+    public double VerificaEstatistica(double[] v) throws Exception {
 
+        if (v == null) {
+            throw new Exception("vetor nao pode ser nulo");
+        }
+
+        if (v.length == 0) {
+            throw new Exception("vetor com zero elementos");
+        }
+        
         this.OrdernaVetor(v);
         int tipo = v.length % 2;
         if (tipo == 1) {
