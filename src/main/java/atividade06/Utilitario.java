@@ -1,6 +1,8 @@
 package atividade06;
 
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -9,6 +11,7 @@ import java.util.Arrays;
 public class Utilitario {
 
     public void OrdernaVetor(double[] v) {
+        
         Arrays.sort(v);
     }
 
@@ -23,8 +26,10 @@ public class Utilitario {
         }
     }
 
-    public double Mediana(double[] v) {
+    public double Mediana(double[] v){
         this.OrdernaVetor(v);
+        
+        
         int tipo = v.length % 2;
         if (tipo == 1) {
             return v[((v.length + 1) / 2) - 1];
@@ -40,7 +45,6 @@ public class Utilitario {
         double maior = v[0];
         int contMaior = 0;
         int contMenor = 0;
-        
 
         for (int i = 0; i < v.length; i++) {
             media += v[i];
