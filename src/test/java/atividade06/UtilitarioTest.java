@@ -2,6 +2,7 @@ package atividade06;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  *
@@ -61,18 +62,19 @@ public class UtilitarioTest {
      * (iv) Encontre os n maiores e os n menores número do vetor, assumindo que
      * n>=1.*
      */
-
     @Test
     public void testaNMaioreseMenoresNumeros() {
-        double[] v = {6, 3, 1, 4, 5, 2};
-        double[] vMaior = {6, 5};
-        double[] vMenor = {1, 2};
-        
+        double[] v = {6, 3, 1, 4, 5, 2, 7};
+        double[] vMaior = {7, 6, 5};
+        double[] vMenor = {1, 2, 3};
+
         Utilitario u = new Utilitario();
-        assertEquals(6.0, vMaior[0], 0.01);
-        assertEquals(5.0, vMaior[1], 0.01);
+        assertEquals(7.0, vMaior[0], 0.01);
+        assertEquals(6.0, vMaior[1], 0.01);
+        assertEquals(5.0, vMaior[2], 0.01);
         assertEquals(1.0, vMenor[0], 0.01);
         assertEquals(2.0, vMenor[1], 0.01);
-        
+        assertEquals(3.0, vMenor[2], 0.01);
+
     }
 }

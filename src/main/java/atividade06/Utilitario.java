@@ -81,4 +81,31 @@ public class Utilitario {
         return Math.sqrt(((double) 1 / (v.length - 1) * somatorio));
     }
 
+    public Estatistica VerificaNumeroVetor(double[] v, int t) {
+        this.OrdernaVetor(v);
+        double[] vMenor;
+        double[] vMaior;
+        vMenor = null;
+        vMaior = null;
+        for (int i = 0; i < t; i++) {
+            vMenor[i] = v[i];
+        }
+        double aux = 0;
+        int k;
+        for (k = 0; k < v.length; k++) {
+            if (v[k] > v[k + 1]) {
+                aux = v[0];
+                v[k] = v[k + 1];
+                v[k + 1] = aux;
+                k = 0;
+            } 
+        }
+        for (int i = 0; i < t; i++) {
+            vMaior[i] = v[i];
+        }
+        
+        
+        return new Estatistica(vMenor, vMaior);
+    }
+
 }
