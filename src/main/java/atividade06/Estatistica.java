@@ -103,5 +103,7 @@ public class Estatistica {
     public void setvMenor(double[] vMenor) {
         this.vMenor = vMenor;
     }
+
+   
     
 }

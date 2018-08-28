@@ -26,8 +26,10 @@ public class Utilitario {
         }
     }
 
-    public double Mediana(double[] v) {
+    public double Mediana(double[] v) throws Exception {
+        this.VerificaVetor(v);
         this.OrdernaVetor(v);
+        
         int tipo = v.length % 2;
         if (tipo == 1) {
             return v[((v.length + 1) / 2) - 1];
@@ -37,7 +39,8 @@ public class Utilitario {
         }
     }
 
-    public Estatistica CalculaEstatistica(double[] v) {
+    public Estatistica CalculaEstatistica(double[] v) throws Exception {
+        this.VerificaVetor(v);
         double media = 0;
         double menor = v[0];
         double maior = v[0];
@@ -66,7 +69,9 @@ public class Utilitario {
         return new Estatistica(media, menor, maior, contMenor, contMaior);
     }
 
-    public double DesvioPadrao(double[] v) {
+    public double DesvioPadrao(double[] v) throws Exception {
+        this.VerificaVetor(v);
+        
         double somatorio = 0;
         double aux = 0;
         double media = 0;
@@ -81,7 +86,8 @@ public class Utilitario {
         return Math.sqrt(((double) 1 / (v.length - 1) * somatorio));
     }
 
-    public Estatistica VerificaNumeroVetor(double[] v, int t) {
+    public Estatistica VerificaNumeroVetor(double[] v, int t) throws Exception {
+        this.VerificaVetor(v);
         this.OrdernaVetor(v);
         double[] vMenor;
         double[] vMaior;

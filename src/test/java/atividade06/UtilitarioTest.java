@@ -19,11 +19,12 @@ public class UtilitarioTest {
      * double com entrada. Valide para valor nulo e vazio.
      *
      */
+    
     /**
      * (i) Encontre a mediana dos números.*
      */
     @Test
-    public void testaVetorOrdenadoImpar() {
+    public void testaVetorOrdenadoImpar() throws Exception {
         double[] v = {1, 2, 3, 4, 5};
         Utilitario u = new Utilitario();
         double res = u.Mediana(v);
@@ -35,7 +36,7 @@ public class UtilitarioTest {
      * acima da média e o o número de valores abaixo da média.*
      */
     @Test
-    public void testaVetor() {
+    public void testaVetor() throws Exception {
         double[] v = {3, 5, 8, 9, 5, 1, 4};
         Utilitario u = new Utilitario();
         Estatistica res = u.CalculaEstatistica(v);
@@ -51,7 +52,7 @@ public class UtilitarioTest {
      * (iii) Encontre o desvio padrão dos números.*
      */
     @Test
-    public void testaDesvioPadrao() {
+    public void testaDesvioPadrao() throws Exception {
         double[] v = {1, 4, 6, 3, 7};
         Utilitario u = new Utilitario();
         assertEquals(2.38747, u.DesvioPadrao(v), 0.01);
@@ -68,7 +69,6 @@ public class UtilitarioTest {
         double[] vMaior = {7, 6, 5};
         double[] vMenor = {1, 2, 3};
 
-        Utilitario u = new Utilitario();
         assertEquals(7.0, vMaior[0], 0.01);
         assertEquals(6.0, vMaior[1], 0.01);
         assertEquals(5.0, vMaior[2], 0.01);
@@ -77,4 +77,5 @@ public class UtilitarioTest {
         assertEquals(3.0, vMenor[2], 0.01);
 
     }
+    
 }
