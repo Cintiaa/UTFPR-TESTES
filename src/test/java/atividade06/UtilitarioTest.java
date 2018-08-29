@@ -19,7 +19,6 @@ public class UtilitarioTest {
      * double com entrada. Valide para valor nulo e vazio.
      *
      */
-    
     /**
      * (i) Encontre a mediana dos números.*
      */
@@ -64,18 +63,19 @@ public class UtilitarioTest {
      * n>=1.*
      */
     @Test
-    public void testaNMaioreseMenoresNumeros() {
+    public void testaNMaioreseMenoresNumeros() throws Exception {
+        Utilitario u = new Utilitario();
         double[] v = {6, 3, 1, 4, 5, 2, 7};
-        double[] vMaior = {7, 6, 5};
-        double[] vMenor = {1, 2, 3};
+        double[] vMaior = u.VerificaVMaior(v, 3);
+        double[] vMenor = u.VerificaVMenor(v, 3);
 
-        assertEquals(7.0, vMaior[0], 0.01);
-        assertEquals(6.0, vMaior[1], 0.01);
-        assertEquals(5.0, vMaior[2], 0.01);
-        assertEquals(1.0, vMenor[0], 0.01);
-        assertEquals(2.0, vMenor[1], 0.01);
-        assertEquals(3.0, vMenor[2], 0.01);
+        assertEquals(7.0f, vMaior[0], 0.01);
+        assertEquals(6.0f, vMaior[1], 0.01);
+        assertEquals(5.0f, vMaior[2], 0.01);
+        assertEquals(1.0f, vMenor[0], 0.01);
+        assertEquals(2.0f, vMenor[1], 0.01);
+        assertEquals(3.0f, vMenor[2], 0.01);
 
     }
-    
+
 }
