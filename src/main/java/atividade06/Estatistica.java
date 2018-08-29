@@ -12,8 +12,6 @@ public class Estatistica {
     private int contMenor;
     private int contMaior;
     private double desvioPadrao;
-    private double[] vMaior;
-    private double[] vMenor;
     
     
     
@@ -26,12 +24,6 @@ public class Estatistica {
         
     }
 
-    public Estatistica(double[] vM, double[] vN){
-        this.vMenor = vM;
-        this.vMaior = vN;
-        
-    }
-    
     public double getMediana() {
         return mediana;
     }
@@ -87,23 +79,5 @@ public class Estatistica {
     public void setDesvioPadrao(double desvioPadrao) {
         this.desvioPadrao = desvioPadrao;
     }
-
-    public double[] getvMaior() {
-        return vMaior;
-    }
-
-    public void setvMaior(double[] vMaior) {
-        this.vMaior = vMaior;
-    }
-
-    public double[] getvMenor() {
-        return vMenor;
-    }
-
-    public void setvMenor(double[] vMenor) {
-        this.vMenor = vMenor;
-    }
-
-   
     
 }

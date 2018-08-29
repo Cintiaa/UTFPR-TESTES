@@ -26,6 +26,16 @@ public class Utilitario {
         }
     }
 
+    public void InverteVetor(double[] v){
+        double temp = 0;
+        for (int i = 0; i < v.length / 2; i++) {
+            temp = v[v.length - i - 1];
+            v[v.length - i - 1] = v[i];
+            v[i] = temp;
+        }
+
+    }
+        
     public double Mediana(double[] v) throws Exception {
         this.VerificaVetor(v);
         this.OrdernaVetor(v);
@@ -84,6 +94,30 @@ public class Utilitario {
             somatorio = somatorio + (aux * aux);
         }
         return Math.sqrt(((double) 1 / (v.length - 1) * somatorio));
-    
+    }
+
+    public double[] VerificaVMenor(double[] v, int t) throws Exception {
+        this.VerificaVetor(v);
+        this.OrdernaVetor(v);
+        double[] vMenor = new double[t];
+
+        for (int i = 0; i < vMenor.length; i++) {
+            vMenor[i] = v[i];
+        }
+
+        return vMenor;
+    }
+
+    public double[] VerificaVMaior(double[] v, int t) throws Exception {
+        this.VerificaVetor(v);
+        this.OrdernaVetor(v);
+        this.InverteVetor(v);
+        double[] vMaior = new double[t];
+
+        for (int i = 0; i < vMaior.length; i++) {
+            vMaior[i] = v[i];
+
+        }
+        return vMaior;
     }
 }
