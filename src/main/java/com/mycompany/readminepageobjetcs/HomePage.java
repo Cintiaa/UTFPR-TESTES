@@ -11,8 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author CINTIA
  */
 public class HomePage extends RedmineBasePage {
-    
-    @FindBy(id = "flash_notice")
+   
     WebElement flash_notice;
 
      public HomePage(WebDriver driver) {
@@ -20,7 +19,7 @@ public class HomePage extends RedmineBasePage {
     }
     public boolean ContaExcluida() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(flash_notice));
+        wait.until(ExpectedConditions.visibilityOf(flash_notice));
         return flash_notice.isDisplayed();
     }
 

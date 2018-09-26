@@ -11,10 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class LoginPage extends RedmineBasePage {
 
-    @FindBy(id = "username")
     WebElement username;
 
-    @FindBy(id = "password")
     WebElement password;
 
     @FindBy(xpath = "//*[@id=\"login-form\"]/form/table/tbody/tr[4]/td[1]/a")
@@ -23,8 +21,9 @@ public class LoginPage extends RedmineBasePage {
     @FindBy(xpath = "//*[@id=\"login-form\"]/form/table/tbody/tr[4]/td[2]/input")
     WebElement login;
 
-    @FindBy(id = " flash_error")
     WebElement flash_error;
+    
+    WebElement flash_notice;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -34,7 +33,11 @@ public class LoginPage extends RedmineBasePage {
         username.sendKeys(tUser);
         password.sendKeys(tPass);
         login.click();
-        return new LoginPage(driver);
+
+       if(Url().equals("http://demo.redmine.org/"))
+            return new HomePage(driver);
+        else
+            return new LoginPage(driver);
     }
 
     public LostPassword IrParaPaginaLostPassword() {
@@ -44,9 +47,16 @@ public class LoginPage extends RedmineBasePage {
         return new LostPassword(driver);
     }
 
-    private boolean Error() {
+    public boolean Error() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(flash_error));
+        wait.until(ExpectedConditions.visibilityOf(flash_error));
         return flash_error.isDisplayed();
     }
+    
+    public boolean Sucesso() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(flash_notice));
+        return flash_notice.isDisplayed();
+    }
+
 }

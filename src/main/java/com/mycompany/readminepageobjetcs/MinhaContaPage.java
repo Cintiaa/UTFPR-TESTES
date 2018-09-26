@@ -2,7 +2,9 @@ package com.mycompany.readminepageobjetcs;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -10,42 +12,51 @@ import org.openqa.selenium.support.ui.Select;
  */
 public class MinhaContaPage extends RedmineBasePage {
 
-    @FindBy(id = "user_firstname")
     WebElement user_firstname;
-    
-    @FindBy(id = "user_lastname")
+
     WebElement user_lastname;
     
-    @FindBy(id = "user_mail")
-    WebElement user_email;
-    
-    @FindBy(id = "user_language")
+    WebElement user_mail;
+
     WebElement user_language;
     Select idioma = new Select(user_language);
-
-    @FindBy(xpath = "//*[@id=\"my_account_form\"]/div[1]/input")
-    WebElement salvar;
+    
+    WebElement commit;
 
     @FindBy(xpath = "//*[@id=\"sidebar\"]/p[2]/a")
     WebElement excluir_conta;
+    
+    WebElement flash_notice;
     
      public MinhaContaPage(WebDriver driver) {
         super(driver);
     }
 
-    public void AtualizarDados(String tFirstName, String tLastName, String tEmail, String tLanguage) {
+  
+    public MinhaContaPage AtualizarDados(String tFirstName, String tLastName, String tEmail) {
+    
+        user_firstname.clear();
         user_firstname.sendKeys(tFirstName);
+        user_lastname.clear();
         user_lastname.sendKeys(tLastName);
-        user_email.sendKeys(tEmail);
-        idioma.selectByVisibleText(tLanguage);
-        salvar.submit();
+        user_mail.clear();
+        user_mail.sendKeys(tEmail);
+     
+        commit.click();
+        return new MinhaContaPage(driver);
+                
     }
 
     public ExcluirMinhaContaPage ExcluirConta() {
         excluir_conta.click();
         return new ExcluirMinhaContaPage(driver);
     }
-
+    
+    public boolean Atualizado(){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(flash_notice));
+        return flash_notice.isDisplayed();
+    }
    
 
 }

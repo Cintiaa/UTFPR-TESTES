@@ -1,6 +1,7 @@
 package com.mycompany.readminepageobjetcs;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
 
 /**
  *
@@ -8,8 +9,12 @@ import org.openqa.selenium.WebDriver;
  */
 public class ProjectsPage extends RedmineBasePage{
     
+    
+    
+    
     public ProjectsPage(WebDriver driver) {
         super(driver);
     }
     
+        
 }

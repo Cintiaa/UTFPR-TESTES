@@ -25,15 +25,18 @@ public class Menu extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"account\"]/ul/li[2]/a")
     WebElement register;
-    
+
     @FindBy(xpath = "//*[@id=\"loggedas\"]/a")
     WebElement loggedas;
-    
+
     @FindBy(xpath = "//*[@id=\"account\"]/ul/li[1]/a")
     WebElement my_account;
-    
+
     @FindBy(xpath = "//*[@id=\"account\"]/ul/li[2]/a")
     WebElement logout;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[1]/ul[1]/li[3]/a")
+    WebElement new_projects;
 
     public Menu(WebDriver driver) {
         super(driver);
@@ -44,8 +47,8 @@ public class Menu extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(menuOption));
         menuOption.click();
     }
-    
-    public HomePage IrParaHomePage(){
+
+    public HomePage IrParaHomePage() {
         clickMenuOption(home);
         return new HomePage(driver);
     }
@@ -69,19 +72,24 @@ public class Menu extends BasePage {
         clickMenuOption(register);
         return new RegisterPage(driver);
     }
-    
-    public MinhaContaPage IrParaMinhaConta(){
+
+    public MinhaContaPage IrParaMinhaConta() {
         clickMenuOption(my_account);
         return new MinhaContaPage(driver);
     }
-    
-    public HomePage Sair(){
+
+    public HomePage Sair() {
         clickMenuOption(logout);
         return new HomePage(driver);
     }
-    
+
     public String AcessandoComo() {
         return loggedas.getText();
-    } 
+    }
+
+    public NewProject CriarNovoProjeto() {
+        clickMenuOption(new_projects);
+        return new NewProject(driver);
+    }
 
 }
