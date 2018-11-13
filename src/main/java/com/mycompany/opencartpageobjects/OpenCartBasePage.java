@@ -16,18 +16,20 @@ public class OpenCartBasePage extends BasePage{
     @FindBy(xpath = "//*[@id=\"content\"]/div[1]/div/h1")
     WebElement titulo;
     
-    MenuPage menupage;
+    MenuPage menuPage;
+    NavigationPage navigationPage;
 
     public OpenCartBasePage(WebDriver driver) {
         super(driver);
-        menupage = new MenuPage(driver);
+        menuPage = new MenuPage(driver);
+        navigationPage = new NavigationPage(driver);
     }
     
-    public MenuPage selecionaItemMenu(){
-        return menupage;
+    public MenuPage SelectionItemMenu(){
+        return menuPage;
     }
-    
-    
-    
+    public NavigationPage selecionaItemNavigation(){
+        return navigationPage;
+    } 
     
 }
