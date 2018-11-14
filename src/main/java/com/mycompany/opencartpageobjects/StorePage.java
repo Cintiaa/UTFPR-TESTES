@@ -2,9 +2,7 @@ package com.mycompany.opencartpageobjects;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 /**
  *
@@ -28,8 +26,15 @@ public class StorePage extends OpenCartBasePage {
     @FindBy(xpath = "//*[@id=\"content\"]/h3")
     WebElement h3;
     
+    MenuTopPage menutop;
+    
     public StorePage(WebDriver driver) {
         super(driver);
+        menutop = new MenuTopPage(driver);
+    }
+    
+    public MenuTopPage SelectionItem(){
+        return menutop;
     }
     
     public OpenCartBasePage Search(String tSearch) {
