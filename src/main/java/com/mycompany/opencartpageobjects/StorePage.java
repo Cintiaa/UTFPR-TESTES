@@ -2,7 +2,9 @@ package com.mycompany.opencartpageobjects;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -23,6 +25,9 @@ public class StorePage extends OpenCartBasePage {
     WebElement show_option;
     Select options = new Select(show_option);
     
+    @FindBy(xpath = "//*[@id=\"content\"]/h3")
+    WebElement h3;
+    
     public StorePage(WebDriver driver) {
         super(driver);
     }
@@ -37,5 +42,11 @@ public class StorePage extends OpenCartBasePage {
         dropdown_menu.click();
         options.selectByVisibleText(tOptions);
         return new ResultPage(driver);
+    }
+    
+    public boolean Sucess() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(h3));
+        return h3.isDisplayed();
     }
 }
