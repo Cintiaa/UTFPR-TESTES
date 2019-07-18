@@ -1,0 +1,33 @@
+- O que é o teste de software? Qual a melhor definição?
+R - É uma área do desenvolvimento voltado a exploração e execução de testes em uma aplicação, visando encontrar erros para que sejam corrigidos antes que o produto seja entregue ao usuário final. Faz parte da área de qualidade onde se verifica se todas as funcionalidades da aplicação foram contempladas e estão funcionando corretamente.
+
+ 
+- O que é teste de unidade, integração e sistema?
+R - Teste de unidade consiste em validar dados válidos e inválidos via E/S
+Teste de Integração é a fase de teste onde os módulos são combinados e testados grupos. Na prática como o software se comporta integrado com sistemas externos.
+Teste de sistemas é um teste completo, em que o sistema completo (integrado) é testado num ambiente que simula o ambiente de produção. Pode ser testado o sistema completo ou partes do sistema que já estão prontas.
+ 
+- O que é um caso de teste? Dê exemplos.
+R - Descreve um condição particular a ser testada, sendo composto por valores de entrada, restrições para a sua execução e um resultado ou comportamento esperado.
+
+ 
+- Qual a diferença entre um teste manual e um teste automatizado?
+R - Teste manual é executado sem o auxilio de ferramentas, onde os testadores e/ou desenvolvedores criam e executam os casos de teste de forma manual.
+Enquanto que o teste automatizado é excutado com o auxílio de uma ferramenta para a realização dos casos de teste. 
+ 
+- Explique a diferença entre o teste caixa-branca e o teste caixa-preta.
+R - Teste caixa branca é uma técnica que usa a perspectiva interna do sistema para modelar casos teste, ou seja tem contato com o código do sistema. Enquanto que o teste caixa preta, não tem contato com o código, mas  visa verificar a saída dos dados usando entradas de vários tipos.
+ 
+- O que é um teste de regressão?
+R - Teste regressão é um tipo de teste de software aplicado a versões mais recentes do software para garantir que não surgiram novos defeitos em componentes já analisados.
+
+- O que é um critério de teste? Cite exemplos.
+Serve para selecionar e avaliar casos de teste de forma a aumentar as possibilidades de
+provocar falhas ou, quando isso não ocorre, estabelecer um nível elevado de confiança na correção do produto.
+Exemplos de Critérios de teste funcional: Particionamento em classes de equivalências, análise de valor limite, grafo causa-efeito, método de partição-categoria, teste funcional sistemático.
+
+Exemplos de critérios de teste estrutural: todos-nós, todos-arcos, todos-caminhos.
+
+Cíntia Nunes dos Santos,
+Caio Vannucci,
+Dafny Garcia
